@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function  num(a)
+        {
+            var uni=a.which;
+            if(uni<=47|| uni>57)
+            {
+                alert('Enter number only');
+                return false;
+            }
+            return true;
+
+        }  
+        function ascfnc()
+        {   
+            var as=document.getElementById('numbers').value;
+            if(as==0||null)
+            {   
+                document.getElementById('output').innerHTML="";
+                alert('Enter number ');
+                return false;
+            }
+            else{
+            document.getElementById('asc').style.display='none';
+            document.getElementById('dsc').style.display='block';
+           
+            out ='';
+            for(i=0;i<=as;i++)
+            {
+                out+="asc "+" "+i+'<br>';
+            }
+            document.getElementById('output').innerHTML=out;
+        }
+    }
+
+
+        function dscfnc()
+        {   
+            var ds=document.getElementById('numbers').value;
+            if(ds==0||ds==null)
+            {
+                document.getElementById('output').innerHTML="";
+                alert('Enter number ');
+                return false;
+            }
+            else{
+            document.getElementById('dsc').style.display='none';
+            document.getElementById('asc').style.display='block';
+           
+            out ='';
+            for(i=ds;i>=0;i--)
+            {
+                out+="dsc "+" "+i+'<br>';
+            }
+            document.getElementById('output').innerHTML=out;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div>
+    <input type="text" id="numbers" name="numbers" value="" onkeypress="return num(event)">
+    </div>
+    <button type="button"  name="Asc" id="asc" onclick="ascfnc()">ASC</button>
+    <button type="button"  name="Asc" id="dsc" style="display:none;" onclick="dscfnc()">DSC</button>
+    <br><br>
+    <div id="output"></div>
+</body>
+</html>

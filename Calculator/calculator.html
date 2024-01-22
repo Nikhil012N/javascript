@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="calculatorregex.js"></script>
+    <style>
+        button {
+            padding: 8px 12px;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div style="border-style: solid; width: fit-content">
+        <input type="text" name="calc" id="input" onkeydown="return false" style="border: 0px; outline: none" /><br />
+        <input type="text" name="calc" id="output" style="border: 0px; text-align: right; outline: none" readonly />
+    </div>
+    <br />
+    <div>
+        <button type="button" onclick="myfnc(1)">1</button>
+        <button type="button" onclick="myfnc(2)">2</button>
+        <button type="button" onclick="myfnc(3)">3</button>
+        <button type="button" onclick="myfnc(4)">4</button>
+        <br>
+        <button type="button" onclick="myfnc(5)">5</button>
+        <button type="button" onclick="myfnc(6)">6</button>
+        <button type="button" onclick="myfnc(7)">7</button>
+        <button type="button" onclick="myfnc(8)">8</button>
+        <br>
+        <button type="button" onclick="myfnc(9)">9</button>
+        <button type="button" onclick="myfnc(0)">0</button>
+        <button type="button" onclick="operator('+')">+</button>
+        <button type="button" onclick="operator('-')">−</button>
+        <br>
+        <button type="button" onclick="myfnc('.')">.&nbsp;</button>
+        <button type="button" onclick="operator('%')">٪</button>
+        <button type="button" onclick="operator('*')">x</button>
+        <button type="button" onclick="operator('/')">/&nbsp;</button>
+        <br>
+        <button type="button" onclick="clrscr()">c</button>
+        <button type="button" id="result" onclick="res()">=</button>
+        <button type="button" onclick="backspace()" style="width: 85px">backspace</button>
+    </div>
+    <div id="input"></div>
+</body>
+</html>

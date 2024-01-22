@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="product.js"></script>
+  <style>
+    table,
+    td,
+    tr,
+    thead,
+    tbody,
+    th {
+      border: 1px black solid;
+      border-collapse: collapse;
+      margin: 20px;
+      padding: 5px 5px;
+    }
+
+    button {
+      margin: 1px;
+      padding: 1px;
+      text-align: center;
+      width: 78px;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <form id="form1" name="form1">
+    <table>
+      <tr>
+        <td>Product Category:</td>
+        <td>
+          <input type="text" id="cat" onchange="catval()" onkeypress="return alphabetcheck(event)" />
+          <br /><label id="catval" style="color:red;display: none;">Enter category</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Product Name:</td>
+        <td>
+          <input type="text" id="name" onchange="Pronameval()" onkeypress="return alphabetcheck(event)" /><br /><label
+            id="nam" style="color:red;display: none;"> Enter Name</label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="button" id="savebtn" onclick="Save()">SAVE</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <form id="form2" style="display:none;">
+    <table>
+      <tr>
+        <td>Product Category:</td>
+        <td>
+          <input type="text" id="cat1" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td>Product Name:</td>
+        <td>
+          <input type="text" id="name1" readonly />
+        </td>
+      </tr>
+      <tr>
+        <td>Variant Name</td>
+        <td> <input type="text" id="varname" onkeypress="return alphabetcheck(event)" onchange="VariantName()"/><br><label id="variantval"
+            style="color:red;display: none;"> Enter variant name</label></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>
+          <input type="text" id="price" onchange="Priceval()" onkeypress="return pricecheck(event)" /><br><label
+            id="prc" style="color:red;display: none;"> Enter price</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>
+          <input type="text" id="color" name="colors" onchange="colorscheck()" onkeypress="return alphabetcheck(event)" />
+          <br><label id="color1" style="color:red;display: none;"> Enter color</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>
+          <input type="text" id="description" onchange="descript()" onkeypress="return alphabetcheck(event)"/>
+          <br><label id="describe" style="color:red;display: none;"> Enter description</label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="button" id="SaveVariant" onclick="SaveVarient(this.value)">SAVE Variant</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <div id="table1" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th>PRODUCT CATEGORY</th>
+          <th>PRODUCT NAME</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div id="table2" style="display:none">
+    <table id="output">
+    </table>
+  </div>
+</body>
+
+</html>

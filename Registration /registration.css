@@ -1,0 +1,27 @@
+table,
+      th,
+      td ,thead,tbody{
+          border: 1px solid black;
+          padding: 5px 8px ;
+          margin: 10px;
+          border-collapse: collapse;
+          width: fit-content;
+          cursor: pointer;
+      }
+     
+      input,
+      select,
+      option,
+      label{
+         
+          padding: 5px 9px;
+          margin: 4px;
+          cursor: pointer;
+      }
+      button{
+        cursor: pointer;
+      }
+     
+     
+        
+      

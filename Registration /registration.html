@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="registration.css" />
+  <script src="registration.js"></script>
+  <script></script>
+</head>
+
+<body>
+  <form name="frm1" method="post" id="form">
+    <table>
+      <tr>
+        <td><label for="myid">ID</label></td>
+        <td><input type="number" id="myid" readonly /></td>
+      </tr>
+      <tr>
+        <td>
+          <label for="mydate">Date</label>
+        </td>
+        <td>
+          <input type="date" id="mydate" onchange="date()" />
+          <label id="dateval" style="color: red; display: none">Select date</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="myname">Name</label>
+        </td>
+        <td>
+          <input type="text" id="myname" onkeypress="return namval(event)" onchange="changename()" />
+          <label id="nameval" style="color: red; display: none">Enter valid name</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="myemail">Email</label>
+        </td>
+        <td>
+          <input type="text" id="myemail" onchange="valeml()" />
+          <label id="emailval" style="color: red; display: none">Enter valid email format</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="myage">Age</label>
+        </td>
+        <td>
+          <input type="text" id="myage" onchange="valage()" />
+          <label id="ageval" style="color: red; display: none">Age should be between 18 & 100
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="mobile">Phone Number</label></td>
+        <td>
+          <input type="text" id="mobile" onchange="valphn()" maxlength="10" /><label id="phnval"
+            style="color: red; display: none">
+            Enter valid contact details</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="address">Address</label></td>
+        <td>
+          <input type="text" id="address" onkeypress="return addresval(event)" onchange="addres()" /><label
+            id="addressval" style="color: rgb(233, 43, 43); display: none">
+            Enter valid address</label>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="country">Country</label></td>
+        <td>
+          <select id="country" onchange="countryfnc()">
+            <option value=""></option>
+            <option value="INDIA">INDIA</option>
+            <option value="CHINA">CHINA</option>
+            <option value="JAPAN">JAPAN</option>
+            <option value="SRI LANKA">SRI LANKA</option>
+          </select><label id="countryval" style="color: red; display: none">
+            Please choose country</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="Gender" id="genders">Gender</label></td>
+        <td>
+          <input type="radio" name="Gender" id="Male" value="MALE" onchange="return genderfnc()" /><label for="Male">
+            MALE</label>
+          <input type="radio" name="Gender" id="Female" value="FEMALE" onchange="return genderfnc()" /><label
+            for="Female">FEMALE</label>
+          <label id="genderval" style="color: red; display: none">
+            Select gender</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label id="games">Games</label>
+        </td>
+        <td>
+          <input type="checkbox" name="mychk" id="fo" value="FOOTBALL" onchange="gamesval()" /><label
+            for="fo">FOOTBALL</label>
+          <input type="checkbox" name="mychk" id="cr" value="CRICKET" onchange="gamesval()" /><label for="cr">CRICKET
+          </label>
+          <input type="checkbox" name="mychk" id="ch" value="CHESS" onchange="gamesval()" /><label
+            for="ch">CHESS</label>
+          </select><label id="checkboxval" style="color: red; display: none">
+            Click on any checkbox</label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="button" onclick="submisson()" id="submitbtn">Submit</button>
+          <button type="button" onclick="Update(this.value)" id="updatebtn" style="display: none;">Update</button>
+
+        </td>
+      </tr>
+    </table>
+  </form>
+  <br>
+  <br>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Desh</th>
+        <th>Gender</th>
+        <th>Games</th>
+        <th>Change</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+
+  </table>
+
+</body>
+
+</html>

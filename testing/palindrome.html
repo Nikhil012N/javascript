@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const palindro=()=>
+        {
+            let string = document.getElementById("object").value;
+            let lens = string.length;
+            for(let i=0;i<lens/2;i++)
+            {
+                if(string[i] !== string[lens - 1 - i]) 
+                {  
+                alert('It is not palindrome'); 
+                return; 
+                }
+            }
+             alert("This is a palindrome");
+        };
+        const allsum=()=>
+        {
+            let num = Number(document.getElementById("object").value);
+            let sum = (num*(num+1))/2
+            document.getElementById("blank").innerHTML = sum;
+        };
+    </script>
+</head>
+<body>
+    <input type="text" name="obj" id="object" />
+    <button type="button" onclick="palindro()">Palindrome</button>
+    <button type="button" onclick="allsum()">SUM</button>
+    <p id="blank"></p>
+</body>
+</html>

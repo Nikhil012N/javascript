@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+   const loop=()=>{
+       
+       let initial_value =Number(document.getElementById("start").value);
+       let n = Number(document.getElementById("end").value);
+       let out="";
+       for(let i=0;i<=n;i++)
+         {
+           for(let j=0;j<i;j++)
+           {
+             out+= initial_value++ +" ";
+           }
+           out+="<br>";
+         }
+         document.getElementById("output").innerHTML=out;
+     };
+       </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Starting value</td>
+                <td> <input type="text" id="start" value="" /></td></tr>
+                <tr> <td>No. of lines</td>
+                <td><input type="text" id="end" value="" /></td></tr>
+                <tr><td>
+                <button type="button" id="btnloop" onclick="loop()">Loop</button>  
+            </td></tr>
+        </table>
+        </form>
+        <div id="output"></div>
+</body>
+</html>

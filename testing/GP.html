@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table,input{
+            padding: 2px 5px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+      const GPval=()=> {
+        document.getElementById("output").innerHTML = "";
+        let a = document.getElementById("start").value;
+        let b = document.getElementById("ratio").value;
+        let c = document.getElementById("end").value;
+        let values = "";
+        for (let i = 0; i < c; i++) {
+          values += a *(b**i)+" ";
+        }
+        document.getElementById("output").innerHTML ="Geometric progression:  "+ values;
+      };
+
+     const APval=()=>
+      {
+        document.getElementById("output").innerHTML = "";
+        let initial = Number(document.getElementById("start").value);
+        let difference = Number(document.getElementById("ratio").value);
+        let endvalue = Number(document.getElementById("end").value);
+        let numbers="";
+        for (let i=0;i<endvalue;i++)
+        {
+          numbers +=initial +((i)*difference)+" ";
+        }
+
+        let nthvalue = Number(initial + difference*(endvalue-1));
+        let fact = (initial + nthvalue ) * endvalue; 
+        let fact1 = fact/2;
+         document.getElementById("output").innerHTML ="Arithmatic progression:  "+ numbers+" And the sum AP " +fact1;
+      };
+    </script>
+
+  </head>
+  <body>
+    <form>
+        <table>
+            <tr>
+                <td>Starting value</td>
+                <td> <input type="text" id="start" value="" /></td></tr>
+                <tr> <td>Ratio</td>
+                <td> <input type="text" id="ratio" value="" /></td></tr>
+                <tr> <td>End length</td>
+                <td><input type="text" id="end" value="" /></td></tr>
+                <tr> <td> <button type="button" id="btngp" onclick="GPval()">GP</button>
+                  <button type="button" id="btnap" onclick="APval()">AP</button>
+                </td></tr>
+    </table>
+    </form>
+    <p id="output"></p>
+  </body>
+</html>
