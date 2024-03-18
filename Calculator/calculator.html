@@ -5,46 +5,128 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="calculatorregex.js"></script>
+    <title>Calculator</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .calculator {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            max-width: 90%;
+        }
+
+        .input,
+        .output {
+            border: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: right;
+            font-size: 1.5em;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: transparent;
+            outline: none;
+        }
+
+        .input {
+            color: #000000; /* Original text color for input */
+        }
+
+        .output {
+            color: #000000; /* Original text color for output */
+        }
+
+        .input:focus,
+        .output:focus {
+            border-color: #007bff;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
         button {
-            padding: 8px 12px;
-            margin: 4px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px; /* Default border radius */
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #f0f0f0; /* Light button color */
+            color: #333; /* Button text color */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ddd; /* Lighter color on hover */
+        }
+
+        button.operator,
+        button.clear,
+        button.equal {
+            border-radius: 2px; /* Adjusted border radius for functional buttons */
+            background-color: #333; /* Dark button color for functional buttons */
+            color: #fff; /* Button text color for functional buttons */
+        }
+
+        button.operator:hover,
+        button.clear:hover,
+        button.equal:hover {
+            background-color: #555; /* Darker color on hover for functional buttons */
+        }
+
+        .result {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            font-size: 1.5em;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            color: #000000; /* Original text color for result */
         }
     </style>
 </head>
+
 <body>
-    <div style="border-style: solid; width: fit-content">
-        <input type="text" name="calc" id="input" onkeydown="return false" style="border: 0px; outline: none" /><br />
-        <input type="text" name="calc" id="output" style="border: 0px; text-align: right; outline: none" readonly />
+    <div class="calculator">
+        <input type="text" class="input" id="input" readonly />
+        <input type="text" class="output" id="output" readonly />
+        <div class="buttons">
+            <button onclick="myfnc(1)">1</button>
+            <button onclick="myfnc(2)">2</button>
+            <button onclick="myfnc(3)">3</button>
+            <button class="operator" onclick="operator('+')">+</button>
+            <button onclick="myfnc(4)">4</button>
+            <button onclick="myfnc(5)">5</button>
+            <button onclick="myfnc(6)">6</button>
+            <button class="operator" onclick="operator('-')">−</button>
+            <button onclick="myfnc(7)">7</button>
+            <button onclick="myfnc(8)">8</button>
+            <button onclick="myfnc(9)">9</button>
+            <button class="operator" onclick="operator('*')">x</button>
+            <button class="clear" onclick="clrscr()">C</button>
+            <button onclick="myfnc(0)">0</button>
+            <button onclick="myfnc('.')">.</button>
+            <button class="operator" onclick="operator('/')">÷</button>
+            <button class="equal" onclick="res()">=</button>
+        </div>
     </div>
-    <br />
-    <div>
-        <button type="button" onclick="myfnc(1)">1</button>
-        <button type="button" onclick="myfnc(2)">2</button>
-        <button type="button" onclick="myfnc(3)">3</button>
-        <button type="button" onclick="myfnc(4)">4</button>
-        <br>
-        <button type="button" onclick="myfnc(5)">5</button>
-        <button type="button" onclick="myfnc(6)">6</button>
-        <button type="button" onclick="myfnc(7)">7</button>
-        <button type="button" onclick="myfnc(8)">8</button>
-        <br>
-        <button type="button" onclick="myfnc(9)">9</button>
-        <button type="button" onclick="myfnc(0)">0</button>
-        <button type="button" onclick="operator('+')">+</button>
-        <button type="button" onclick="operator('-')">−</button>
-        <br>
-        <button type="button" onclick="myfnc('.')">.&nbsp;</button>
-        <button type="button" onclick="operator('%')">٪</button>
-        <button type="button" onclick="operator('*')">x</button>
-        <button type="button" onclick="operator('/')">/&nbsp;</button>
-        <br>
-        <button type="button" onclick="clrscr()">c</button>
-        <button type="button" id="result" onclick="res()">=</button>
-        <button type="button" onclick="backspace()" style="width: 85px">backspace</button>
-    </div>
-    <div id="input"></div>
+
+    <script src="calculatorregex.js"></script>
 </body>
+
 </html>
